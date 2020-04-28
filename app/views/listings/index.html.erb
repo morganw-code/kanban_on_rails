@@ -1,20 +1,23 @@
 <h1>Working!</h1>
 
-<div class="listings-container">
-    <% for listing in @listings %>
-        <div class="listing-container">
-            <%= listing.title %>
-            <br>
-            <%= listing.message %>
-            <br>
-            <% if current_user.id == listing.user_id %>
-                <div class="card-buttons">
-                    <div class="card-edit-button">
-                        <%= button_to "Edit", edit_listing_path(listing.id), class: "card-button" %>
-                        <%= form_with model: listing, local: true, method: "delete" do |form| %>
-                            <%= submit_tag "Destroy", class: "card-button" %>
-                        <% end %>
-                    </div>
+<div class="columns-container">
+    <% 4.times do %>
+        <div class="cards-column">
+            <% for listing in @listings %>
+                <div class="card">
+                    <p class="card-title"><%= listing.title %></p>
+                    <br>
+                    <p class="card-message"><%= listing.message %></p>
+                    <br>
+                    <%= image_tag listing.image, class: "card-image" if listing.image.attached? %>
+                    <% if current_user.id == listing.user_id %>
+                        <div class="card-buttons">
+                            <%= button_to "Edit", edit_listing_path(listing.id), method: "get", class: "card-button" %>
+                            <%= form_with model: listing, local: true, method: "delete" do |form| %>
+                                <%= submit_tag "Destroy", class: "card-button" %>
+                            <% end %>
+                        </div>
+                    <% end %>
                 </div>
             <% end %>
         </div>
