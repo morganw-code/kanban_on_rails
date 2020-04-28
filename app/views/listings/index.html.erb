@@ -1,10 +1,15 @@
 <h1>Working!</h1>
 
-<div class="listings">
+<div class="listings-container">
     <% for listing in @listings %>
-        <li><%= listing.title %></li>
-        <li><%= listing.message %></li>
+        <div class="listing-container">
+            <%= listing.title %>
+            <br>
+            <%= listing.message %>
+            <br>
+            <%= link_to "edit", edit_listing_path(listing.id) if current_user.id == listing.user_id %>
+        </div>
     <% end %>
-
-    <span>Listing count: <%= @listings.count %></span>
 </div>
+
+<span>Listing count: <%= @listings.count %></span>

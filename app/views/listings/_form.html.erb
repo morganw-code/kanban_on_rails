@@ -7,15 +7,15 @@
 <% end %>
 
 <%= form_with model: listing, local: true do |form| %>
-        <div>
-            <%= form.label :title %>
-            <%= form.text_field :title, value: listing.title %>
-        </div>
-        <div>
-            <%= form.label :message %>
-            <%= form.text_field :message, value: listing.message %>
-        </div>
-        <div>
-            <%= form.submit %>
-        </div>
+    <div>
+        <%= form.label :title %>
+        <%= form.text_field :title, value: listing.title %>
+    </div>
+    <div>
+        <%= form.label :message %>
+        <%= form.text_field :message, value: listing.message %>
+    </div>
+    <div>
+        <%= form.submit %>
+    </div>
 <% end %>
