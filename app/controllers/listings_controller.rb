@@ -26,7 +26,6 @@ class ListingsController < ApplicationController
     end
 
     def show
-    
     end
 
     def update
@@ -36,6 +35,11 @@ class ListingsController < ApplicationController
         else 
             redirect_to listings_path
         end
+    end
+
+    def destroy
+        Listing.find(params[:id]).destroy
+        redirect_to listings_path
     end
 
     private

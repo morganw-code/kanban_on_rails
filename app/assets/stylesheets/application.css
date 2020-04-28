@@ -8,3 +8,7 @@
     padding: 1em;
     border: 1px solid red;
 }
+
+.card-edit-button {
+    border: 1px solid red;
+}

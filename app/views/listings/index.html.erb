@@ -7,7 +7,16 @@
             <br>
             <%= listing.message %>
             <br>
-            <%= link_to "edit", edit_listing_path(listing.id) if current_user.id == listing.user_id %>
+            <% if current_user.id == listing.user_id %>
+                <div class="card-buttons">
+                    <div class="card-edit-button">
+                        <%= button_to "Edit", edit_listing_path(listing.id), class: "card-button" %>
+                        <%= form_with model: listing, local: true, method: "delete" do |form| %>
+                            <%= submit_tag "Destroy", class: "card-button" %>
+                        <% end %>
+                    </div>
+                </div>
+            <% end %>
         </div>
     <% end %>
 </div>
