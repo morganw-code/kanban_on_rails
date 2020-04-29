@@ -9,7 +9,7 @@
                     <br>
                     <p class="card-message"><%= listing.message %></p>
                     <br>
-                    <%= image_tag listing.image, class: "card-image" if listing.image.attached? %>
+                    <%= image_tag listing.image, class: "card-image", id: "card-image" if listing.image.attached? %>
                     <% if current_user.id == listing.user_id %>
                         <div class="card-buttons">
                             <%= button_to "Edit", edit_listing_path(listing.id), method: "get", class: "card-button" %>

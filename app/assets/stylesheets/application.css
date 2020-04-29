@@ -55,10 +55,22 @@ table {
     box-sizing: border-box;
 }
 
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
 .columns-container {
     display: flex;
     padding: 1em;
-    border: 1px solid blue;
+	border: 1px solid blue;
+	background-color: #CDCDCD;
+}
+
+.card {
+	padding: 1em;
+	border-radius: 1em;
+	margin-top: 0.5em;
+	background-color: #FFFFFF;
 }
 
 .card-buttons {
@@ -66,18 +78,26 @@ table {
 }
 
 .cards-column {
-    padding: 1em;
+    padding: 0 1em 0.5em 1em;
     border: 1px solid red;
     min-width: 25%;
     max-width: 25%;
 }
 
 .card > .card-title {
+	font-weight: bold;
     padding: 0;
     margin: 0;
 }
 
 .card > .card-image {
-    width: 50px;
-    height: 50px;
+    width: 50%;
+	height: 50%;
+	transition: 1s;
+}
+
+.card > .card-image:hover {
+    width: 100%;
+	height: 100%;
+	transition: 1s;
 }
